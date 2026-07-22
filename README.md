@@ -11,7 +11,7 @@
 ![Compliance](https://img.shields.io/badge/Standards-ISO--9001_Compliant-0366d6?style=for-the-badge&logo=checkmarx&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-6c757d?style=for-the-badge)
 
-[Live Demo](#) · [Pitch Deck](./NexFactory-AI-ppt.pptx) · [Video Walkthrough](#) · [Report a Bug](#)
+[Live Demo](#) · [Pitch Deck (PPTX)](https://github.com/Priyanshi0907/NexFactory/raw/main/NexFactory-AI-ppt.pptx) · [Video Walkthrough](#) · [Report a Bug](#)
 
 </div>
 
