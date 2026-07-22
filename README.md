@@ -17,7 +17,7 @@
 
 <div align="center">
   <br />
-  <img src="docs/screenshots/dashboard-hero.png" alt="NexFactory AI PredictIQ Executive Industrial Operations Dashboard" width="900"/>
+  <img src="docs/screenshots/dashboard-hero.webp" alt="NexFactory AI PredictIQ Executive Industrial Operations Dashboard" width="900"/>
   <br /><br />
   <p><em>NexFactory AI PredictIQ — Live Industrial Equipment Condition Monitoring & Anomaly Telemetry Dashboard</em></p>
 </div>
