@@ -222,7 +222,7 @@ python -m uvicorn app.main:app --reload --port 8000     # backend  → http://lo
 
 ## 👥 Team Gamma
 
-Built with ❤️ by **Team Gamma** for the Hackathon:
+Built by **Team Gamma** for the **Build With Bharat** Hackathon:
 
 | Name | Role | GitHub / Profile |
 | :--- | :--- | :--- |
