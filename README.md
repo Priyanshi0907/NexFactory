@@ -1,82 +1,142 @@
-# ⚙️ PredictIQ — NexFactory AI
-> **Industrial Predictive Maintenance & Digital Twin Intelligence Platform for Smart Manufacturing & MSMEs**
+<div align="center">
 
-![Build Status](https://img.shields.io/badge/Build-Passing-emerald?style=for-the-badge&logo=vite)
-![AI Core](https://img.shields.io/badge/AI_Engine-Isolation_Forest_ML-indigo?style=for-the-badge&logo=python)
-![Compliance](https://img.shields.io/badge/Standards-ISO--9001_Compliant-blue?style=for-the-badge&logo=checkmarx)
-![License](https://img.shields.io/badge/License-MIT-slate?style=for-the-badge)
+# ⚙️ NexFactory AI — PredictIQ
 
----
+### Industrial Predictive Maintenance & Digital Twin Intelligence for Smart Manufacturing & MSMEs
 
-## 📌 Executive Summary
+*Predict failures days before they happen. Turn downtime into a decision, not a disaster.*
 
-Unplanned machine downtime costs Indian MSMEs and global manufacturing plants **over ₹12 Lakhs per line per shift**. Traditional maintenance practices rely on reactive emergency fixes or static time-based servicing—leading to catastrophic equipment failures, lost production capacity, energy wastage, and severe financial losses.
+![Build Status](https://img.shields.io/badge/Build-Passing-2ea44f?style=for-the-badge&logo=vite&logoColor=white)
+![AI Core](https://img.shields.io/badge/AI_Engine-Isolation_Forest_ML-6f42c1?style=for-the-badge&logo=python&logoColor=white)
+![Compliance](https://img.shields.io/badge/Standards-ISO--9001_Compliant-0366d6?style=for-the-badge&logo=checkmarx&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-6c757d?style=for-the-badge)
 
-**PredictIQ (powered by NexFactory AI)** is an end-to-end **Industrial Internet of Things (IIoT) & Predictive Maintenance Platform** built to transform factory operations from reactive firefighting to proactive, zero-downtime intelligence. Combining **Isolation Forest Machine Learning**, real-time telemetry streaming, a **Digital Twin What-If Scenario Simulator**, an **Anomaly Fault Injector**, and an **AI Operator Co-Pilot (FactoryGPT)**, PredictIQ empowers plant managers to predict equipment failures **days before they occur**, saving lakhs in avoidable losses.
+[Live Demo](#) · [Pitch Deck](#) · [Video Walkthrough](#) · [Report a Bug](#)
 
----
+</div>
 
-## 🔥 Winning Key Features & Innovations
-
-### 1. 🛰️ Real-Time Telemetry Streaming & ML Anomaly Detection
-- **Multi-Sensor Live Telemetry**: Continuous real-time monitoring of Vibration ($mm/s$), Temperature ($°C$), Electrical Current ($Amps$), and Drive Shaft RPM ($RPM$).
-- **Isolation Forest ML Engine**: Evaluates live multi-sensor feature vectors against nominal baselines to detect subtle micro-anomalies (bearing outer-race spalling, motor thermal runaway, fluid cavitation) with **94.2% diagnostic accuracy**.
-- **Remaining Useful Life (RUL) & Health Score**: Dynamic health score calculation ($0-100\%$) and Remaining Useful Life forecasting in days.
-
-### 2. ⚡ Interactive Fault & Anomaly Injector Simulator
-- **Live Anomaly Simulation**: Allows plant engineers to inject synthetic real-world failure signatures into connected machinery:
-  - *Bearing Outer-Race Fatigue* (CM-03 Conveyor Motor)
-  - *Air Intake Filter Restriction* (SC-02 Screw Compressor)
-  - *Proportional Valve Cavitation* (HP-02 Hydraulic Press)
-- **Visual Alert Highlighting**: Instantly highlights affected machinery cards with high-contrast red alert boundaries (`border-rose-500 shadow-rose-500/20`), triggering active severity flags (*Critical*, *Watchlist*).
-
-### 3. 🔮 Digital Twin "What-If" Scenario Simulator
-- **Disruption Forecasting**: Simulates line disruptions (*Unscheduled Breakdown*, *Grid Power Trip*, *Spares Delivery Lead Time Delay*) across variable downtime durations (1 to 24 hours).
-- **Multi-Vector Impact Calculation**:
-  - **Production Capacity Loss**: Exact unit loss calculation & capacity drop percentage.
-  - **Shipment Risk**: Forecasts delayed customer orders and bottlenecked downstream assembly lines.
-  - **Financial Exposure**: Calculates direct monetary revenue loss in **₹ Lakhs**.
-- **AI Prescribed SOP Mitigations**: Recommends immediate load rerouting SOPs (*e.g., shift 65% production quota to Line B auxiliary press*) to salvage up to **72% of lost revenue**.
-
-### 4. 🤖 FactoryGPT — Industrial Operator AI Co-Pilot
-- **Natural Language Assistant**: An integrated LLM assistant trained on industrial machinery maintenance manuals, ISO-9001 standards, and plant telemetry data.
-- **Context-Aware Recommendations**: Answers operator queries like *"How do I fix CM-03 bearing vibration?"* with step-by-step Lockout/Tagout procedures, SKF bearing replacement guides, and laser alignment tolerances ($<0.05mm$).
-
-### 5. 📄 Scrollable 3-Page Executive PDF & Visual Audit Exporter
-- **Unified 3-Page Document Modal**: A scrollable, print-isolated 3-page executive audit report:
-  - **Page 1 (Executive KPI & Fleet Health Audit)**: Direct ROI avoided loss ($\text{₹}5.90\text{L}$), Fleet Health Index ($73\%$), active risk flags, energy leakage ($142.5\text{ kWh/shift}$), and equipment matrix with visual health progress bars.
-  - **Page 2 (Historical Analytics & Root Causes)**: High-definition SVG Graphical Line & Area Chart for Weekly Production vs Target, downtime root-cause breakdown, and Quality Scrap tolerance limits ($<2.50\%$).
-  - **Page 3 (Prescribed AI Maintenance SOPs & Sign-Off)**: Priority-coded machine action plans, step-by-step maintenance SOPs, energy loss mitigation directives, **ISO-9001 Cryptographic QR Code verification stamp**, and official Senior Plant Operations Manager signature block.
-- **Identical Screen & PDF Output**: Built with custom `@media print` CSS isolation, ensuring both **"Download PDF"** and **"Print / Save PDF"** export 100% pixel-identical visual documents.
-
-### 6. 📊 Dynamic Multi-Period Analytics
-- Dynamically filters all dashboard analytics and report pages across **This Week (Mon-Sun)**, **This Month (4 Weeks)**, and **Last Quarter (Q2 2026)** with real-time recalculations of avoided losses and failure distribution graphs.
+<div align="center">
+  <img src="docs/screenshots/dashboard-hero.png" alt="NexFactory AI dashboard overview" width="850"/>
+  <p><em>Replace this with a real dashboard screenshot before submission — first impressions decide judging order.</em></p>
+</div>
 
 ---
 
-## 🛠️ Technology Stack & Architecture
+## 📖 Table of Contents
 
+1. [The Problem](#-the-problem)
+2. [Our Solution](#-our-solution)
+3. [Key Features](#-key-features)
+4. [Architecture](#-architecture)
+5. [Tech Stack](#-tech-stack)
+6. [Repository Structure](#-repository-structure)
+7. [Quick Start](#-quick-start--installation)
+8. [Business Impact & ROI](#-business-impact--roi)
+9. [Why NexFactory AI Wins](#-why-nexfactory-ai-wins)
+10. [Roadmap](#-roadmap)
+11. [Team](#-team)
+12. [License](#-license)
+
+---
+
+## 🎯 The Problem
+
+Unplanned machine downtime costs Indian MSMEs and global manufacturing plants **over ₹12 lakhs per line, per shift.** Most factories still run on one of two broken models:
+
+- **Reactive maintenance** — fix it after it breaks, after the line has already stopped.
+- **Time-based servicing** — replace parts on a fixed calendar, wasting good components and still missing failures that don't follow a schedule.
+
+Neither model sees a failure coming. Both bleed money silently through scrap, energy waste, and missed shipments.
+
+## 💡 Our Solution
+
+**PredictIQ**, powered by **NexFactory AI**, is an end-to-end Industrial IoT and predictive maintenance platform that turns raw sensor telemetry into a decision an operator can act on *before* a machine fails — not after.
+
+It combines four things most predictive-maintenance tools ship separately, in one console:
+
+- **Isolation Forest ML** trained on live multi-sensor telemetry to catch micro-anomalies early
+- **A Digital Twin "what-if" simulator** that prices out a disruption in rupees before it happens
+- **FactoryGPT**, an operator-facing co-pilot that turns a diagnosis into a maintenance procedure
+- **An auto-generated executive audit report**, so the same data that helps an operator also helps a plant manager justify the investment
+
+---
+
+## 🔥 Key Features
+
+### 1. 🛰️ Real-Time Telemetry & ML Anomaly Detection
+Continuous multi-sensor monitoring — vibration (mm/s), temperature (°C), current (A), and drive-shaft RPM. An Isolation Forest model evaluates each live feature vector against nominal baselines to catch subtle failure signatures (bearing outer-race spalling, motor thermal runaway, fluid cavitation) at **94.2% diagnostic accuracy**, alongside a dynamic **0–100% health score** and **Remaining Useful Life (RUL)** forecast.
+
+### 2. ⚡ Interactive Fault & Anomaly Injector
+Lets engineers inject real-world failure signatures — bearing fatigue on a conveyor motor, air-filter restriction on a compressor, valve cavitation on a hydraulic press — and watch the system detect and flag them live, with severity levels (*Watchlist* → *Critical*).
+
+### 3. 🔮 Digital Twin "What-If" Simulator
+Simulates a disruption (unscheduled breakdown, grid power trip, delayed spares delivery) across 1–24 hours of downtime and calculates the real cost: production units lost, shipment risk, and financial exposure in ₹ lakhs — then recommends an AI-prescribed mitigation SOP (e.g. reroute 65% of load to an auxiliary line) that can recover up to **72% of the lost revenue**.
+
+### 4. 🤖 FactoryGPT — Industrial Operator Co-Pilot
+A natural-language assistant trained on maintenance manuals, ISO-9001 standards, and live plant telemetry. Ask *"how do I fix CM-03 bearing vibration?"* and get a step-by-step lockout/tagout procedure with bearing replacement guidance and alignment tolerances.
+
+### 5. 📄 3-Page Executive Audit Report Exporter
+A print-isolated, pixel-identical PDF/on-screen report: **Page 1** — KPI and fleet-health audit with avoided-loss figures; **Page 2** — historical analytics and downtime root-cause breakdown; **Page 3** — prescribed maintenance SOPs with an ISO-9001 verification stamp and sign-off block.
+
+### 6. 📊 Multi-Period Analytics
+Every dashboard and report view filters live across **this week, this month, and last quarter**, recalculating avoided losses and failure distributions on the fly.
+
+---
+
+## 🏗 Architecture
+
+```mermaid
+flowchart TB
+    U["Plant operator"]
+
+    subgraph Client["Client layer"]
+        FE["React 18 + Vite frontend<br/>TailwindCSS · Recharts"]
+    end
+
+    subgraph Server["Application layer"]
+        BE["FastAPI backend<br/>Uvicorn · Pydantic"]
+    end
+
+    subgraph Intelligence["Intelligence layer"]
+        ML["ML engine<br/>Isolation Forest · scikit-learn"]
+        GPT["FactoryGPT<br/>LLM operator co-pilot"]
+    end
+
+    DB[("Telemetry store<br/>Live sensor feed")]
+
+    U --> FE
+    FE <-->|"REST + async telemetry"| BE
+    BE --> ML
+    BE --> GPT
+    BE --> DB
+
+    FE -. deploys to .-> VER["Vercel / Netlify"]
+    BE -. deploys to .-> DOC["Render / Docker"]
+
+    classDef client fill:#E1F5EE,stroke:#0F6E56,color:#04342C;
+    classDef server fill:#EEEDFE,stroke:#534AB7,color:#26215C;
+    classDef intel fill:#FAEEDA,stroke:#854F0B,color:#412402;
+    classDef store fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A;
+    class FE client;
+    class BE server;
+    class ML,GPT intel;
+    class DB,U store;
 ```
-+-------------------------------------------------------------------------------+
-|                               PredictIQ FRONTEND                              |
-|   React 18 | Vite 5 | TailwindCSS | Lucide Icons | Recharts | Canvas-Confetti   |
-+---------------------------------------+---------------------------------------+
-                                        | (REST / Async Telemetry)
-+---------------------------------------v---------------------------------------+
-|                               PredictIQ BACKEND                               |
-|   FastAPI (Python 3.11) / Express.js | Uvicorn Server | PyDantic Data Models  |
-+---------------------------------------+---------------------------------------+
-                                        |
-+---------------------------------------v---------------------------------------+
-|                            AI / MACHINE LEARNING ENGINE                        |
-|   Scikit-Learn (Isolation Forest) | NumPy | Pandas | RUL Regression Models    |
-+-------------------------------------------------------------------------------+
-```
 
-- **Frontend**: React 18, Vite 5, Vanilla TailwindCSS, Recharts, Lucide-React Icons, Canvas-Confetti.
-- **Backend API**: FastAPI (Python 3.11), Uvicorn ASGI server, Express.js.
-- **Machine Learning Core**: Scikit-Learn (Isolation Forest Anomaly Detection, Feature Scaling), NumPy, Pandas.
-- **Design System**: SaaS Executive UI with glassmorphism, curated HSL color palettes, dark/light mode toggle, and micro-animations.
+**Data flow:** the operator interacts with the React dashboard, which streams telemetry to and from the FastAPI backend over REST. The backend forwards feature vectors to the Isolation Forest engine for anomaly scoring and RUL estimation, routes operator questions to FactoryGPT, and persists readings to the telemetry store that feeds both the live dashboard and the exported audit reports.
+
+> GitHub renders the diagram above automatically. To preview or edit it outside GitHub, paste the code block into the [Mermaid Live Editor](https://mermaid.live).
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | React 18, Vite 5, TailwindCSS, Recharts, Lucide-React, Canvas-Confetti |
+| **Backend API** | FastAPI (Python 3.11), Uvicorn, Pydantic, Express.js |
+| **Machine Learning** | scikit-learn (Isolation Forest), NumPy, Pandas, RUL regression models |
+| **Design System** | Glassmorphism SaaS UI, HSL color tokens, dark/light mode, micro-animations |
 
 ---
 
@@ -85,25 +145,25 @@ Unplanned machine downtime costs Indian MSMEs and global manufacturing plants **
 ```
 predictiq/
 ├── app/
-│   └── main.py                     # FastAPI Backend Server & ML Inference API
+│   └── main.py                     # FastAPI backend server & ML inference API
 ├── src/
 │   ├── components/
-│   │   ├── FleetOverviewCard.jsx   # Equipment Health Cards & Status Matrix
-│   │   ├── TelemetryLiveChart.jsx  # Live Multi-Sensor Telemetry Charts
-│   │   ├── AnomalyInjectorModal.jsx# Real-Time Anomaly Fault Injection Modal
-│   │   ├── WhatIfSimulatorPanel.jsx# Digital Twin Scenario Simulation Panel
-│   │   ├── ReportsAnalyticsView.jsx# 3-Page Executive PDF & Visual Audit Modal
-│   │   ├── FactoryGPTChat.jsx      # Industrial Operator AI Assistant Drawer
-│   │   ├── Sidebar.jsx             # Navigation & Dark/Light Mode Switcher
-│   │   └── Header.jsx              # System Header & Live Telemetry Badge
+│   │   ├── FleetOverviewCard.jsx   # Equipment health cards & status matrix
+│   │   ├── TelemetryLiveChart.jsx  # Live multi-sensor telemetry charts
+│   │   ├── AnomalyInjectorModal.jsx# Real-time anomaly fault injection modal
+│   │   ├── WhatIfSimulatorPanel.jsx# Digital twin scenario simulation panel
+│   │   ├── ReportsAnalyticsView.jsx# 3-page executive PDF & visual audit modal
+│   │   ├── FactoryGPTChat.jsx      # Industrial operator AI assistant drawer
+│   │   ├── Sidebar.jsx             # Navigation & dark/light mode switcher
+│   │   └── Header.jsx              # System header & live telemetry badge
 │   ├── data/
-│   │   └── factoryData.js          # Baseline Datasets & Time-Range Analytics
-│   ├── App.jsx                     # Core Application Workspace Layout
-│   └── index.css                   # Global Design Tokens & Print Isolation Rules
-├── index.html                      # App Entry HTML & Typography Fonts
-├── package.json                    # Node Dependencies & Scripts
-├── vite.config.js                  # Vite Build Configuration
-└── README.md                       # Project Documentation
+│   │   └── factoryData.js          # Baseline datasets & time-range analytics
+│   ├── App.jsx                     # Core application workspace layout
+│   └── index.css                   # Global design tokens & print isolation rules
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
 ---
@@ -111,72 +171,70 @@ predictiq/
 ## ⚡ Quick Start & Installation
 
 ### Prerequisites
-- **Node.js**: v18.0.0 or higher
-- **npm**: v9.0.0 or higher
-- **Python**: v3.10 or higher (for FastAPI backend)
+- Node.js v18+
+- npm v9+
+- Python v3.10+ (for the FastAPI backend)
 
-### 1. Clone & Install Dependencies
+### 1. Clone & install frontend dependencies
 ```bash
 git clone https://github.com/your-repo/predictiq.git
 cd predictiq
-
-# Install Frontend Dependencies
 npm install
 ```
 
-### 2. Setup Python Backend Environment (Optional for API inference)
+### 2. Set up the Python backend (optional, for ML inference)
 ```bash
-# Create virtual environment
 python -m venv venv
-
-# Activate virtual environment
-# Windows:
-.\venv\Scripts\activate
-# Linux/macOS:
-source venv/bin/activate
-
-# Install Python packages
+source venv/bin/activate      # Windows: .\venv\Scripts\activate
 pip install fastapi uvicorn scikit-learn numpy pandas
 ```
 
-### 3. Run Development Servers
+### 3. Run both servers
 ```bash
-# Start Vite Frontend Server (Runs on http://localhost:3000)
-npm run dev
-
-# Start FastAPI Backend Server (Runs on http://localhost:8000)
-python -m uvicorn app.main:app --reload --port 8000
+npm run dev                                            # frontend → http://localhost:3000
+python -m uvicorn app.main:app --reload --port 8000     # backend  → http://localhost:8000
 ```
 
 ---
 
-## 📈 Financial Impact & Business ROI
+## 📈 Business Impact & ROI
 
-| Metric | Traditional Plant | PredictIQ Advantage |
+| Metric | Traditional Plant | With PredictIQ |
 | :--- | :---: | :---: |
-| **Unplanned Downtime** | 18.5 hrs / month | **3.2 hrs / month** (82% Reduction) |
-| **Direct Avoided Loss** | ₹0 | **₹5,90,000 / shift** |
-| **Fleet Health Index** | 45% (Unmonitored) | **73% Optimal Fleet Index** |
-| **Energy Waste Mitigation** | Uncontrolled Idle Draw | **142.5 kWh / shift saved** (~₹1,280/shift) |
-| **Maintenance Protocol** | Reactive / Time-based | **Prescriptive AI SOPs & RUL Guidance** |
+| Unplanned downtime | 18.5 hrs / month | **3.2 hrs / month** (↓82%) |
+| Direct avoided loss | ₹0 | **₹5,90,000 / shift** |
+| Fleet health index | 45% (unmonitored) | **73% optimal** |
+| Energy waste mitigation | Uncontrolled idle draw | **142.5 kWh / shift saved** (~₹1,280/shift) |
+| Maintenance model | Reactive / time-based | **Prescriptive AI SOPs + RUL guidance** |
 
 ---
 
-## 🏆 Why PredictIQ Wins
+## 🏆 Why NexFactory AI Wins
 
-1. **Production-Ready & Fully Functional**: Not a static prototype—features real-time state mutations, anomaly injection, interactive digital twin simulation, and PDF exporting.
-2. **Solving a Real Multi-Billion Dollar Crisis**: Directly addresses MSME downtime losses with quantifiable financial ROI ($\text{₹}5.90\text{L}$ avoided loss).
-3. **World-Class SaaS Aesthetics**: Designed with modern glassmorphism, vibrant dark/light modes, custom typography, micro-interactions, and visual graphic charts.
-4. **End-to-End Compliance**: Built to align with **ISO-9001 Quality Management** standards, featuring cryptographic verification hashes and formal audit authorization blocks.
+1. **It's fully functional, not a static mockup** — real state mutations, live anomaly injection, an interactive digital twin, and a working PDF export.
+2. **It targets a real, quantifiable crisis** — MSME downtime losses, with a concrete ₹5.90L avoided-loss figure to back it up.
+3. **It looks like a product, not a prototype** — glassmorphism UI, dark/light modes, and consistent typography throughout.
+4. **It's built for compliance from day one** — ISO-9001 alignment, cryptographic verification hashes, and a formal audit sign-off block.
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Live MQTT/OPC-UA ingestion from real PLCs and IIoT gateways
+- [ ] Multi-plant, multi-tenant dashboard rollup
+- [ ] Mobile app for on-floor technicians
+- [ ] Model retraining pipeline with drift detection
+
+---
+
+## 👥 Team
+
+Built by **Team Gamma** for the hackathon.
+
+> Add each teammate's name, role, and GitHub/LinkedIn here — judges look for this.
 
 ---
 
 ## 📜 License
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
----
-
-<p center>
-  Made with ❤️ by <strong>Team Gamma</strong> for the Hackathon.
-</p>
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
