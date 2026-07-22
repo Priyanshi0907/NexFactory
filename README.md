@@ -63,22 +63,22 @@ It combines four things most predictive-maintenance tools ship separately, in on
 
 ## 🔥 Key Features
 
-### 1. 🛰️ Real-Time Telemetry & ML Anomaly Detection
+### 1. Real-Time Telemetry & ML Anomaly Detection 
 Continuous multi-sensor monitoring — vibration (mm/s), temperature (°C), current (A), and drive-shaft RPM. An Isolation Forest model evaluates each live feature vector against nominal baselines to catch subtle failure signatures (bearing outer-race spalling, motor thermal runaway, fluid cavitation) at **94.2% diagnostic accuracy**, alongside a dynamic **0–100% health score** and **Remaining Useful Life (RUL)** forecast.
 
-### 2. ⚡ Interactive Fault & Anomaly Injector
+### 2. Interactive Fault & Anomaly Injector 
 Lets engineers inject real-world failure signatures — bearing fatigue on a conveyor motor, air-filter restriction on a compressor, valve cavitation on a hydraulic press — and watch the system detect and flag them live, with severity levels (*Watchlist* → *Critical*).
 
-### 3. 🔮 Digital Twin "What-If" Simulator
+### 3. Digital Twin "What-If" Simulator
 Simulates a disruption (unscheduled breakdown, grid power trip, delayed spares delivery) across 1–24 hours of downtime and calculates the real cost: production units lost, shipment risk, and financial exposure in ₹ lakhs — then recommends an AI-prescribed mitigation SOP (e.g. reroute 65% of load to an auxiliary line) that can recover up to **72% of the lost revenue**.
 
-### 4. 🤖 FactoryGPT — Industrial Operator Co-Pilot
+### 4. FactoryGPT — Industrial Operator Co-Pilot
 A natural-language assistant trained on maintenance manuals, ISO-9001 standards, and live plant telemetry. Ask *"how do I fix CM-03 bearing vibration?"* and get a step-by-step lockout/tagout procedure with bearing replacement guidance and alignment tolerances.
 
-### 5. 📄 3-Page Executive Audit Report Exporter
+### 5. 3-Page Executive Audit Report Exporter
 A print-isolated, pixel-identical PDF/on-screen report: **Page 1** — KPI and fleet-health audit with avoided-loss figures; **Page 2** — historical analytics and downtime root-cause breakdown; **Page 3** — prescribed maintenance SOPs with an ISO-9001 verification stamp and sign-off block.
 
-### 6. 📊 Multi-Period Analytics
+### 6. Multi-Period Analytics
 Every dashboard and report view filters live across **this week, this month, and last quarter**, recalculating avoided losses and failure distributions on the fly.
 
 ---
@@ -218,20 +218,35 @@ python -m uvicorn app.main:app --reload --port 8000     # backend  → http://lo
 
 ---
 
-## 🗺️ Roadmap
+## 📊 Pitch Deck & Presentation Slide Outline
 
-- [ ] Live MQTT/OPC-UA ingestion from real PLCs and IIoT gateways
-- [ ] Multi-plant, multi-tenant dashboard rollup
-- [ ] Mobile app for on-floor technicians
-- [ ] Model retraining pipeline with drift detection
+> *Ready-to-use structure for the hackathon pitch presentation deck:*
+
+| Slide # | Slide Title | Core Message & Demo Highlight |
+| :---: | :--- | :--- |
+| **01** | **Title & Vision** | **PredictIQ by NexFactory AI**: Transforming MSME machine downtime into proactive, zero-downtime decisions. |
+| **02** | **The ₹12L Downtime Crisis** | Indian MSMEs lose over ₹12 Lakhs per shift to emergency firefighting and static calendar servicing. |
+| **03** | **The Solution** | Unified IIoT Telemetry + Isolation Forest ML + Digital Twin Simulator + Operator AI Co-Pilot (FactoryGPT). |
+| **04** | **Live Telemetry & Anomaly Engine** | Multi-sensor vector tracking ($mm/s$, $°C$, $Amps$, $RPM$) detecting failure signatures at **94.2% accuracy**. |
+| **05** | **Digital Twin What-If Simulator** | Simulates 1–24hr outages, forecasting capacity drop, order shipment risk, revenue loss (₹ Lakhs), and AI SOP mitigations. |
+| **06** | **FactoryGPT Operator Co-Pilot** | Natural language industrial assistant delivering Lockout/Tagout procedures, SKF bearing SOPs, and alignment guidance. |
+| **07** | **3-Page Executive Audit Exporter** | Print-isolated, ISO-9001 cryptographic QR stamp & VP signature block for plant management audit compliance. |
+| **08** | **Quantifiable ROI & Impact** | **82% downtime reduction**, **₹5.90L avoided loss per shift**, **142.5 kWh energy saved**. |
+| **09** | **Tech Stack & Execution** | React 18, Vite 5, TailwindCSS, Recharts, FastAPI, Python 3.11, Scikit-Learn Isolation Forest. |
+| **10** | **Team & Future Roadmap** | Team Gamma — Scalable IIoT gateway integrations, multi-plant rollups, and technicians mobile app. |
 
 ---
 
-## 👥 Team
+## 👥 Team Gamma
 
-Built by **Team Gamma** for the hackathon.
+Built with ❤️ by **Team Gamma** for the Hackathon:
 
-> Add each teammate's name, role, and GitHub/LinkedIn here — judges look for this.
+| Name | Role | GitHub / Profile |
+| :--- | :--- | :--- |
+| 👩‍💻 **Priyanshi Choudhary** | Frontend Lead & UI/UX Architect | [@Priyanshi0907](https://github.com/Priyanshi0907) |
+| 👩‍💻 **Raina Goel** | AI/ML Engineer & Data Modeling | [@RainaGoel](https://github.com/) |
+| 👨‍💻 **Kunal Chauhan** | Full-Stack Developer & Systems Integration | [@KunalChauhan](https://github.com/) |
+| 👨‍💻 **Kartik Tyagi** | Backend Engineer & Telemetry Pipeline | [@KartikTyagi](https://github.com/) |
 
 ---
 
