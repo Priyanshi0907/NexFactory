@@ -16,8 +16,10 @@
 </div>
 
 <div align="center">
-  <img src="docs/screenshots/dashboard-hero.png" alt="NexFactory AI dashboard overview" width="850"/>
-  <p><em>Replace this with a real dashboard screenshot before submission — first impressions decide judging order.</em></p>
+  <br />
+  <img src="docs/screenshots/dashboard-hero.png" alt="NexFactory AI PredictIQ Executive Industrial Operations Dashboard" width="900"/>
+  <br /><br />
+  <p><em>NexFactory AI PredictIQ — Live Industrial Equipment Condition Monitoring & Anomaly Telemetry Dashboard</em></p>
 </div>
 
 ---
