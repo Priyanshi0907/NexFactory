@@ -227,8 +227,8 @@ Built by **Team Gamma** for the **Build With Bharat** Hackathon:
 | Name | Role | GitHub / Profile |
 | :--- | :--- | :--- |
 | 👩‍💻 **Priyanshi Choudhary** | Frontend Lead & UI/UX Architect | [@Priyanshi0907](https://github.com/Priyanshi0907) |
-| 👩‍💻 **Raina Goel** | AI/ML Engineer & Data Modeling | [@RainaGoel](https://github.com/) |
-| 👨‍💻 **Kunal Chauhan** | Full-Stack Developer & Systems Integration | [@KunalChauhan](https://github.com/) |
+| 👩‍💻 **Raina Goel** | AI/ML Engineer & Data Modeling | [@RainaGoel](https://github.com/rainagoel06) |
+| 👨‍💻 **Kunal Chauhan** | Full-Stack Developer & Systems Integration | [@KunalChauhan](https://github.com/Kunal-Chauhan-1858) |
 | 👨‍💻 **Kartik Tyagi** | Backend Engineer & Telemetry Pipeline | [@KartikTyagi](https://github.com/) |
 
 ---
