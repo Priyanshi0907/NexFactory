@@ -220,25 +220,6 @@ python -m uvicorn app.main:app --reload --port 8000     # backend  → http://lo
 
 ---
 
-## 📊 Pitch Deck & Presentation Slide Outline
-
-> *Ready-to-use structure for the hackathon pitch presentation deck:*
-
-| Slide # | Slide Title | Core Message & Demo Highlight |
-| :---: | :--- | :--- |
-| **01** | **Title & Vision** | **PredictIQ by NexFactory AI**: Transforming MSME machine downtime into proactive, zero-downtime decisions. |
-| **02** | **The ₹12L Downtime Crisis** | Indian MSMEs lose over ₹12 Lakhs per shift to emergency firefighting and static calendar servicing. |
-| **03** | **The Solution** | Unified IIoT Telemetry + Isolation Forest ML + Digital Twin Simulator + Operator AI Co-Pilot (FactoryGPT). |
-| **04** | **Live Telemetry & Anomaly Engine** | Multi-sensor vector tracking ($mm/s$, $°C$, $Amps$, $RPM$) detecting failure signatures at **94.2% accuracy**. |
-| **05** | **Digital Twin What-If Simulator** | Simulates 1–24hr outages, forecasting capacity drop, order shipment risk, revenue loss (₹ Lakhs), and AI SOP mitigations. |
-| **06** | **FactoryGPT Operator Co-Pilot** | Natural language industrial assistant delivering Lockout/Tagout procedures, SKF bearing SOPs, and alignment guidance. |
-| **07** | **3-Page Executive Audit Exporter** | Print-isolated, ISO-9001 cryptographic QR stamp & VP signature block for plant management audit compliance. |
-| **08** | **Quantifiable ROI & Impact** | **82% downtime reduction**, **₹5.90L avoided loss per shift**, **142.5 kWh energy saved**. |
-| **09** | **Tech Stack & Execution** | React 18, Vite 5, TailwindCSS, Recharts, FastAPI, Python 3.11, Scikit-Learn Isolation Forest. |
-| **10** | **Team & Future Roadmap** | Team Gamma — Scalable IIoT gateway integrations, multi-plant rollups, and technicians mobile app. |
-
----
-
 ## 👥 Team Gamma
 
 Built with ❤️ by **Team Gamma** for the Hackathon:
