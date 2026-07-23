@@ -502,58 +502,81 @@ export default function ReportsAnalyticsView({ isDarkMode }) {
                 {/* Dynamic Table & Graphical Representation of Output vs Target */}
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 font-sans">
-                      Production Output vs Target Performance Breakdown
+                    <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 font-sans flex items-center gap-2">
+                      <span>Production Output vs Target Visual Analytics</span>
+                      <span className="px-2 py-0.5 text-[9px] font-mono bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200 uppercase font-bold">Graphic Chart View</span>
                     </h4>
                     <span className="text-xs font-mono text-indigo-600 font-bold">Total Downtime: {currentAnalytics.downtimeHrs}</span>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
-                    {currentAnalytics.production.map((row) => {
-                      const pct = Math.round((row.actual / row.target) * 100);
-                      const isHigh = pct >= 95;
-                      return (
-                        <div key={row.day} className="space-y-1">
-                          <div className="flex items-center justify-between text-xs font-bold">
-                            <span className="w-20 text-slate-700 font-mono">{row.day}</span>
-                            <span className="text-slate-500 font-mono">Target: {row.target.toLocaleString()} units</span>
-                            <span className="text-slate-900 font-black">Actual: {row.actual.toLocaleString()} units ({pct}%)</span>
+                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                    {/* Graphical Visual Recharts Bar Chart */}
+                    <div className="h-56 w-full bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={currentAnalytics.production} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
+                          <XAxis dataKey="day" stroke="#64748b" fontSize={11} tickLine={false} axisLine={false} />
+                          <YAxis stroke="#64748b" fontSize={11} tickLine={false} axisLine={false} />
+                          <Tooltip 
+                            contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '12px', fontSize: '11px', color: '#fff' }}
+                            cursor={{ fill: '#f1f5f9', radius: 6 }}
+                          />
+                          <Legend wrapperStyle={{ fontSize: '11px', fontFamily: 'sans-serif' }} />
+                          <Bar dataKey="target" fill="#cbd5e1" radius={[6, 6, 0, 0]} name="Target Units" />
+                          <Bar dataKey="actual" fill="#6366f1" radius={[6, 6, 0, 0]} name="Actual Output" />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+
+                    {/* Performance Metrics Matrix Grid */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2 pt-1">
+                      {currentAnalytics.production.map((row) => {
+                        const pct = Math.round((row.actual / row.target) * 100);
+                        const isHigh = pct >= 95;
+                        return (
+                          <div key={row.day} className="p-2.5 rounded-xl bg-white border border-slate-200/80 text-center font-mono">
+                            <div className="text-[10px] font-extrabold text-slate-500 uppercase">{row.day}</div>
+                            <div className="text-xs font-black text-slate-900 mt-0.5">{row.actual.toLocaleString()}</div>
+                            <div className={`text-[9px] font-extrabold mt-1 px-1.5 py-0.5 rounded-full ${isHigh ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-rose-50 text-rose-700 border border-rose-200'}`}>
+                              {pct}% ({row.downtimeHrs}h)
+                            </div>
                           </div>
-                          <div className="w-full bg-slate-200 h-3 rounded-full overflow-hidden p-0.5">
-                            <div 
-                              className={`h-full rounded-full transition-all ${isHigh ? 'bg-gradient-to-r from-indigo-500 to-indigo-600' : 'bg-gradient-to-r from-amber-500 to-rose-500'}`}
-                              style={{ width: `${Math.min(100, pct)}%` }}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
 
                 {/* Root Cause Failure Vectors & Defect Distribution */}
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   
                   <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
                     <div>
-                      <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 mb-3 font-sans">
-                        Downtime Root Causes ({currentAnalytics.label})
+                      <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 mb-3 font-sans flex items-center justify-between">
+                        <span>Downtime Root Causes Breakdown</span>
+                        <span className="text-[10px] font-mono text-slate-400">Pie Visual</span>
                       </h4>
-                      <div className="space-y-3 text-xs">
-                        {currentAnalytics.reasons.map((reason) => (
-                          <div key={reason.name} className="space-y-1">
-                            <div className="flex items-center justify-between font-bold">
-                              <span className="text-slate-700">{reason.name}</span>
-                              <span className="font-mono text-slate-900 font-black">{reason.value}%</span>
-                            </div>
-                            <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full rounded-full" 
-                                style={{ width: `${reason.value}%`, backgroundColor: reason.color }} 
-                              />
-                            </div>
-                          </div>
-                        ))}
+
+                      <div className="h-48 w-full bg-white p-2 rounded-xl border border-slate-200/80 flex items-center justify-center">
+                        <ResponsiveContainer width="100%" height="100%">
+                          <PieChart>
+                            <Pie
+                              data={currentAnalytics.reasons}
+                              cx="35%"
+                              cy="50%"
+                              innerRadius={35}
+                              outerRadius={65}
+                              paddingAngle={4}
+                              dataKey="value"
+                            >
+                              {currentAnalytics.reasons.map((entry, index) => (
+                                <Cell key={`report-pie-${index}`} fill={entry.color} />
+                              ))}
+                            </Pie>
+                            <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '12px', fontSize: '11px', color: '#fff' }} />
+                            <Legend wrapperStyle={{ fontSize: '10px', fontFamily: 'sans-serif' }} layout="vertical" align="right" verticalAlign="middle" />
+                          </PieChart>
+                        </ResponsiveContainer>
                       </div>
                     </div>
                   </div>
@@ -564,7 +587,7 @@ export default function ReportsAnalyticsView({ isDarkMode }) {
                         Quality Scrap & Tolerance Gauge
                       </h4>
                       <div className="space-y-4 text-xs">
-                        <div className="p-4 rounded-xl bg-white border border-slate-200 text-center">
+                        <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs">
                           <span className="text-[10px] font-extrabold uppercase text-slate-400 block mb-1">Average Scrap Rate</span>
                           <span className="text-3xl font-black text-emerald-600 font-sans">{currentAnalytics.avgScrapRate}</span>
                           <span className="text-[10px] font-bold text-slate-500 block mt-1">Tolerance Limit &lt; 2.50%</span>
