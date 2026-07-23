@@ -503,6 +503,7 @@ export default function ReportsAnalyticsView({ isDarkMode }) {
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 font-sans flex items-center gap-2">
+                      <BarChart3 className="w-4 h-4 text-indigo-600" />
                       <span>Production Output vs Target Visual Analytics</span>
                       <span className="px-2 py-0.5 text-[9px] font-mono bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200 uppercase font-bold">Graphic Chart View</span>
                     </h4>
@@ -510,22 +511,81 @@ export default function ReportsAnalyticsView({ isDarkMode }) {
                   </div>
 
                   <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
-                    {/* Graphical Visual Recharts Bar Chart */}
-                    <div className="h-56 w-full bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={currentAnalytics.production} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                          <XAxis dataKey="day" stroke="#64748b" fontSize={11} tickLine={false} axisLine={false} />
-                          <YAxis stroke="#64748b" fontSize={11} tickLine={false} axisLine={false} />
-                          <Tooltip 
-                            contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '12px', fontSize: '11px', color: '#fff' }}
-                            cursor={{ fill: '#f1f5f9', radius: 6 }}
-                          />
-                          <Legend wrapperStyle={{ fontSize: '11px', fontFamily: 'sans-serif' }} />
-                          <Bar dataKey="target" fill="#cbd5e1" radius={[6, 6, 0, 0]} name="Target Units" />
-                          <Bar dataKey="actual" fill="#6366f1" radius={[6, 6, 0, 0]} name="Actual Output" />
-                        </BarChart>
-                      </ResponsiveContainer>
+                    {/* Visual Dual Vertical Bar Chart / Histogram */}
+                    <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
+                      
+                      {/* Chart Legend */}
+                      <div className="flex items-center justify-end gap-5 mb-4 text-xs font-bold font-sans">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-3 h-3 rounded bg-slate-300 border border-slate-400" />
+                          <span className="text-slate-600">Target Units</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-3 h-3 rounded bg-indigo-600 shadow-xs" />
+                          <span className="text-slate-900">Actual Output</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-3 h-3 rounded bg-rose-500 shadow-xs" />
+                          <span className="text-rose-700">Downtime Alert (&lt;90%)</span>
+                        </div>
+                      </div>
+
+                      {/* Graphical Bar Histogram Frame */}
+                      <div className="relative h-48 flex items-end justify-between gap-2 pt-6 pb-8 px-4 border-b border-l border-slate-300">
+                        
+                        {/* Horizontal Background Gridlines */}
+                        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none pb-8 pt-2">
+                          <div className="border-b border-slate-100 w-full text-[9px] font-mono text-slate-300">100%</div>
+                          <div className="border-b border-slate-100 w-full text-[9px] font-mono text-slate-300">75%</div>
+                          <div className="border-b border-slate-100 w-full text-[9px] font-mono text-slate-300">50%</div>
+                          <div className="border-b border-slate-100 w-full text-[9px] font-mono text-slate-300">25%</div>
+                        </div>
+
+                        {/* Dual Vertical Columns per Day/Period */}
+                        {currentAnalytics.production.map((row) => {
+                          const maxVal = Math.max(...currentAnalytics.production.map(r => Math.max(r.target, r.actual))) * 1.12;
+                          const targetPct = Math.round((row.target / maxVal) * 100);
+                          const actualPct = Math.round((row.actual / maxVal) * 100);
+                          const effPct = Math.round((row.actual / row.target) * 100);
+                          const isLow = effPct < 90;
+
+                          return (
+                            <div key={row.day} className="relative z-10 flex-1 flex flex-col items-center h-full justify-end group">
+                              
+                              {/* Value Label on Top of Bars */}
+                              <div className="text-[9px] font-mono font-bold text-slate-700 mb-1">
+                                {row.actual >= 1000 ? `${(row.actual/1000).toFixed(1)}k` : row.actual}
+                              </div>
+
+                              {/* Pair of Vertical Bars */}
+                              <div className="flex items-end justify-center gap-1.5 w-full h-full">
+                                {/* Target Bar */}
+                                <div 
+                                  className="w-1/3 max-w-[18px] bg-slate-200 border border-slate-300 rounded-t-md transition-all"
+                                  style={{ height: `${targetPct}%` }}
+                                  title={`Target: ${row.target.toLocaleString()}`}
+                                />
+                                {/* Actual Bar */}
+                                <div 
+                                  className={`w-1/3 max-w-[18px] rounded-t-md transition-all shadow-xs ${
+                                    isLow 
+                                      ? 'bg-gradient-to-t from-amber-500 to-rose-500' 
+                                      : 'bg-gradient-to-t from-indigo-600 to-indigo-500'
+                                  }`}
+                                  style={{ height: `${actualPct}%` }}
+                                  title={`Actual: ${row.actual.toLocaleString()} (${effPct}%)`}
+                                />
+                              </div>
+
+                              {/* Day Label */}
+                              <div className="absolute -bottom-6 text-[10px] font-extrabold text-slate-700 font-mono">
+                                {row.day}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
                     </div>
 
                     {/* Performance Metrics Matrix Grid */}
@@ -534,7 +594,7 @@ export default function ReportsAnalyticsView({ isDarkMode }) {
                         const pct = Math.round((row.actual / row.target) * 100);
                         const isHigh = pct >= 95;
                         return (
-                          <div key={row.day} className="p-2.5 rounded-xl bg-white border border-slate-200/80 text-center font-mono">
+                          <div key={row.day} className="p-2 rounded-xl bg-white border border-slate-200/80 text-center font-mono">
                             <div className="text-[10px] font-extrabold text-slate-500 uppercase">{row.day}</div>
                             <div className="text-xs font-black text-slate-900 mt-0.5">{row.actual.toLocaleString()}</div>
                             <div className={`text-[9px] font-extrabold mt-1 px-1.5 py-0.5 rounded-full ${isHigh ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-rose-50 text-rose-700 border border-rose-200'}`}>
