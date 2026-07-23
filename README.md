@@ -11,7 +11,7 @@
 ![Compliance](https://img.shields.io/badge/Standards-ISO--9001_Compliant-0366d6?style=for-the-badge&logo=checkmarx&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-6c757d?style=for-the-badge)
 
-[Live Demo](https://nex-factory.vercel.app/) · [Pitch Deck (PPTX)](https://github.com/Priyanshi0907/NexFactory/raw/main/NexFactory-AI-ppt.pptx) · [Video Walkthrough](#) · [Report a Bug](https://github.com/Priyanshi0907/NexFactory/issues)
+[Live Demo](https://nex-factory.vercel.app/) · [Pitch Deck (PPTX)](https://github.com/Priyanshi0907/NexFactory/raw/main/NexFactory-AI-ppt.pptx) · [Video Walkthrough](https://github.com/Priyanshi0907/NexFactory/raw/main/docs/Walkthrough.mp4) · [Report a Bug](https://github.com/Priyanshi0907/NexFactory/issues)
 
 </div>
 
@@ -20,6 +20,12 @@
   <img src="docs/screenshots/nexfactory-dashboard-v3.jpg" alt="NexFactory AI PredictIQ Executive Industrial Operations Dashboard" width="950"/>
   <br /><br />
   <p><em>NexFactory AI PredictIQ — AI-Powered Industrial Predictive Maintenance & Intelligence Platform</em></p>
+  <br />
+  <video src="https://github.com/Priyanshi0907/NexFactory/raw/main/docs/Walkthrough.mp4" controls="controls" width="950" style="max-width: 100%;">
+    Your browser does not support the video tag. <a href="https://github.com/Priyanshi0907/NexFactory/raw/main/docs/Walkthrough.mp4">Download Walkthrough.mp4</a>
+  </video>
+  <br />
+  <p><em>📹 Platform Video Walkthrough</em></p>
 </div>
 
 ---
@@ -148,6 +154,7 @@ flowchart TB
 ```
 NexFactory/
 ├── docs/
+│   ├── Walkthrough.mp4             # Full platform video walkthrough
 │   └── screenshots/                # Dashboard screenshots used in this README
 ├── server/
 │   ├── index.js                    # Express server & API routes
