@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_URL } from '../config';
 import { 
   Radio, 
   Code2, 
@@ -55,7 +56,7 @@ export default function IoTIngestionInspector() {
 
 const char* ssid = "FACTORY_IOT_WIFI";
 const char* password = "MSME_SECURE_PASS";
-const char* serverUrl = "https://api.predictiq.app/api/v1/telemetry/ingest";
+const char* serverUrl = "${API_URL}/api/v1/telemetry/ingest";
 
 void setup() {
   Serial.begin(115200);
