@@ -1,9 +1,18 @@
 import express from 'express';
+import cors from 'cors';
 import { calculateAnomalyScore } from './aiEngine.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors({
+  origin: [
+    'https://nex-factory.vercel.app',
+    'http://localhost:3000',
+    'http://localhost:5000'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // In-Memory Database for Demo Telemetry
